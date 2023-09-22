@@ -2,11 +2,11 @@ import type { V2_MetaFunction } from '@remix-run/node';
 
 export const meta: V2_MetaFunction = () => {
   return [
-    { title: 'Driver Admin' },
+    { title: 'Remix Starter' },
     {
       property: 'og:title',
-      content: 'Driver Admin',
+      content: 'Remix Starter',
     },
-    { name: 'description', content: 'Welcome to Driver Admin!' },
+    { name: 'description', content: 'Welcome to Remix!' },
   ];
 };
