@@ -1,0 +1,29 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css');
+
+$font-stack: Pretendard Variable, sans-serif;
+$line-height: 1.4;
+$light-text-color: #0D0E0F;
+$dark-text-color: white;
+
+:root {
+  font-family: $font-stack;
+  line-height: $line-height;
+}
+
+html.light {
+  background-color: white;
+  color: $light-text-color;
+  
+  .test {
+    background-color: silver;
+  }
+}
+
+html.dark {
+  background-color: black;
+  color: $dark-text-color;
+
+  .test {
+    background-color: dimgrey;
+  }
+}
