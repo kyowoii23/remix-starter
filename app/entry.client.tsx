@@ -34,16 +34,7 @@ async function hydrate() {
         caches: [],
       },
     });
-
-  if (process.env.NODE_ENV === 'development') {
-    import('remix-development-tools').then(({ initClient }) => {
-      // Add all the dev tools props here into the client
-      initClient();
-      callback();
-    });
-  } else {
-    callback();
-  }
+  callback();
 }
 
 if (window.requestIdleCallback) {

@@ -44,15 +44,11 @@ export default async function handleRequest(
     let didError = false;
     const sheet = new ServerStyleSheet();
 
-    const context = process.env.NODE_ENV === 'development'
-      ? await import('remix-development-tools').then(({ initServer }) => initServer(remixContext))
-      : remixContext;
-
     let { pipe, abort } = renderToPipeableStream(
       <I18nextProvider i18n={instance}>
         {sheet.collectStyles(
           <RemixServer
-            context={context}
+            context={remixContext}
             url={request.url}
           />,
         )}

@@ -10,8 +10,8 @@ import {
   useLoaderData,
 } from '@remix-run/react';
 import clsx from 'clsx';
-import { lazy, Suspense } from 'react';
 import { useTranslation } from 'react-i18next';
+import rdtStylesheet from 'remix-development-tools/index.css';
 import { useChangeLanguage } from 'remix-i18next';
 
 import { NonFlashOfWrongThemeEls, ThemeProvider, useTheme } from '~/hooks/use-theme';
@@ -30,12 +30,9 @@ export const loader = async ({ request }: LoaderArgs) => {
 export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: resetStyles },
   { rel: 'stylesheet', href: globalStyles },
+  ...(process.env.NODE_ENV === 'development' ? [{ rel: 'stylesheet', href: rdtStylesheet }] : []),
   ...cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : [],
 ];
-
-const RemixDevTools = process.env.NODE_ENV === 'development'
-  ? lazy(() => import('remix-development-tools'))
-  : null;
 
 const App = () => {
   const { locale, theme: serverSideTheme } = useLoaderData<typeof loader>();
@@ -73,13 +70,12 @@ const App = () => {
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
-        {RemixDevTools ? <Suspense><RemixDevTools /></Suspense> : null}
       </body>
     </html>
   );
 };
 
-export default function AppWithProviders() {
+const AppWithProviders = () => {
   const { theme } = useLoaderData<typeof loader>();
 
   return (
@@ -87,4 +83,13 @@ export default function AppWithProviders() {
       <App />
     </ThemeProvider>
   );
+};
+
+let AppExport = AppWithProviders;
+
+if (process.env.NODE_ENV === 'development') {
+  const { withDevTools } = require('remix-development-tools');
+  AppExport = withDevTools(AppExport);
 }
+
+export default AppExport;
