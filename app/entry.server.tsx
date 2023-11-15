@@ -6,6 +6,7 @@ import { RemixServer } from '@remix-run/react';
 import { createInstance } from 'i18next';
 import Backend from 'i18next-fs-backend';
 import isbot from 'isbot';
+import type { ReactNode } from 'react';
 import { renderToPipeableStream } from 'react-dom/server';
 import { I18nextProvider, initReactI18next } from 'react-i18next';
 import { PassThrough } from 'stream';
@@ -51,7 +52,7 @@ export default async function handleRequest(
             context={remixContext}
             url={request.url}
           />,
-        )}
+        ) as ReactNode}
       </I18nextProvider>,
       {
         [callbackName]: () => {

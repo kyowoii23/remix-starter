@@ -14,7 +14,7 @@ export default function Index() {
   const templateValue = useRecoilValue(templateState);
 
   return (
-    <Wrapper className="test">
+    <Wrapper>
       <div>
         <h1>{templateValue}</h1>
       </div>

@@ -9,4 +9,5 @@ export default function Footer() {
 }
 
 const Wrapper = styled.footer`
+  height: var(--footer-height);
 `;

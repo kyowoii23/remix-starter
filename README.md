@@ -50,29 +50,32 @@ yarn start
 │   ├── entry.client.tsx            | 클라이언트 랜더링 모듈
 │   ├── entry.server.tsx            | 서버 랜더링 모듈
 │   ├── hooks                       | 커스텀 훅
-│   ├── localization                | [react-i18next](https://react.i18next.com/) 다국어 모듈
-│   ├── recoil                      | [recoil](https://recoiljs.org/ko/) 전역 상태관리
+│   ├── localization                | react-i18next 다국어 모듈
+│   ├── recoil                      | recoil 전역 상태관리
 │   ├── root.tsx                    | 앱 루트 컴포넌트
 │   ├── routes                      | 페이지별 라우트 컴포넌트
 │   ├── services                    | 서버사이드 전용 서비스 로직
-│   └── styles                      | SCSS로 작성된 스타일은 자동 컴파일되어 이 곳에 CSS파일로 생성 됨
+│   ├── styles                      | SCSS로 작성된 스타일은 자동 컴파일되어 이 곳에 CSS파일로 생성 됨
+│   └── utils                       | 유틸리티 디렉토리
 ├── public                          | public 디렉토리
 │   ├── build                       | 빌드된 파일은 이곳에 생성 됨
 │   ├── favicon.ico                 | 파비콘
-│   └── locales                     | [react-i18next](https://react.i18next.com/) 다국어 디렉토리
+│   └── locales                     | react-i18next 다국어 디렉토리
 │       ├── en                      | 영어
 │       └── ko                      | 한국어
-├── styles                          | .[scss](https://sass-lang.com/)로 스타일 파일을 이곳에 작성 
+├── styles                          | .scss로 스타일 파일을 이곳에 작성 
 │   ├── global.scss                 | 글로벌 스타일
-│   └── reset.scss                  | CSS 초기화
+│   ├── reset.scss                  | CSS 초기화
+│   └── theme.scss                  | 테마 색상 스타일
 ├── .env.example                    | 환경변수 예제 파일
-├── .eslintrc.cjs                   | [eslint](https://eslint.org/) 설정 파일
+├── .eslintrc.cjs                   | eslint 설정 파일
 ├── .gitignore                      | git 커밋 무시 설정
 ├── package.json                    | package.json
 ├── postcss.config.js               | postcss 설정 파일
 ├── README.md
-├── remix.config.js                 | [remix](https://remix.run/docs/en/1.19.3) 프레임워크 설정 파일
+├── remix.config.js                 | remix 프레임워크 설정 파일
 ├── remix.env.d.ts
+├── server.mjs                      | express.js 서버 파일
 ├── tsconfig.json                   | 타입스크립트 설정 파일
 └── yarn.lock
 ```

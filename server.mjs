@@ -1,13 +1,13 @@
 import { createRequestHandler } from '@remix-run/express';
 import { broadcastDevReady } from '@remix-run/node';
 import express from 'express';
-import helmet from 'helmet';
+// import helmet from 'helmet';
 import morgan from 'morgan';
 
 import * as build from './build/index.js';
 
 const app = express();
-app.use(helmet());
+// app.use(helmet());
 app.use(express.static('public'));
 
 app.use(morgan(

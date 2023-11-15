@@ -9,4 +9,5 @@ export default function Header() {
 }
 
 const Wrapper = styled.header`
+  height: var(--header-height);
 `;

@@ -29,4 +29,5 @@ export default function Default() {
 }
 
 const Main = styled.main`
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
 `;

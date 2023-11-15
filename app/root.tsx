@@ -19,6 +19,7 @@ import i18next from '~/localization/i18next.server';
 import { getThemeSession } from '~/services/theme.server';
 import globalStyles from '~/styles/global.css';
 import resetStyles from '~/styles/reset.css';
+import themeStyles from '~/styles/theme.css';
 
 export const loader = async ({ request }: LoaderArgs) => {
   const locale = await i18next.getLocale(request);
@@ -30,6 +31,7 @@ export const loader = async ({ request }: LoaderArgs) => {
 export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: resetStyles },
   { rel: 'stylesheet', href: globalStyles },
+  { rel: 'stylesheet', href: themeStyles },
   ...(process.env.NODE_ENV === 'development' ? [{ rel: 'stylesheet', href: rdtStylesheet }] : []),
   ...cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : [],
 ];
