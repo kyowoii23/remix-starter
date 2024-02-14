@@ -61,5 +61,6 @@
   },
   "lint-staged": {
     "*.{ts,tsx}": "eslint ./app --cache --fix"
-  }
+  },
+  "packageManager": "yarn@4.1.0"
 }
