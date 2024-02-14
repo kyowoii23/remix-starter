@@ -1,7 +1,6 @@
 import { resolve } from 'node:path';
 
 import type { EntryContext } from '@remix-run/node';
-import { Response } from '@remix-run/node';
 import { RemixServer } from '@remix-run/react';
 import { createInstance } from 'i18next';
 import Backend from 'i18next-fs-backend';
@@ -72,7 +71,7 @@ export default async function handleRequest(
           responseHeaders.set('Content-Type', 'text/html');
 
           resolve(
-            new Response(body, {
+            new Response(body as any, {
               headers: responseHeaders,
               status: didError ? 500 : responseStatusCode,
             }),
