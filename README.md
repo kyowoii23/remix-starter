@@ -2,7 +2,7 @@
 다크&라이트 테마, postcss와 SCSS, i18next, styled-components, remix-development-tools, recoil, eslint, husky, remix-validated-form과 yup이 적용되어 있는 remix starter 탬플릿입니다.
 
 ## 설치
-로컬에 기본적으로 16버전 이상의 node.js가 설치되어 있어야합니다.
+로컬에 기본적으로 18버전 이상의 node.js가 설치되어 있어야합니다.
 패키지 매니저로는 yarn 사용을 권장합니다.
 
 yarn이 없는 경우 아래 커맨드로 전역 패키지로 설치
